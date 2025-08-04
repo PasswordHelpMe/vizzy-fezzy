@@ -1,0 +1,36 @@
+{
+  "name": "vizio-tv-controller",
+  "version": "1.0.0",
+  "description": "A modern web app for controlling Vizio SmartCast TVs",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve . -p 8080",
+    "dev": "serve . -p 8080 -l",
+    "build": "echo 'No build step required for vanilla HTML/CSS/JS'",
+    "test": "echo 'No tests specified'",
+    "serve": "serve ."
+  },
+  "keywords": [
+    "vizio",
+    "tv",
+    "remote",
+    "control",
+    "smartcast",
+    "pwa",
+    "web-app",
+    "mobile"
+  ],
+  "author": "Vizio TV Controller Team",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/vizio-tv-controller.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/vizio-tv-controller/issues"
+  },
+  "homepage": "https://github.com/yourusername/vizio-tv-controller#readme"
+} 

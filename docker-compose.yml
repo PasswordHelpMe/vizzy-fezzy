@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  vizio-tv-controller:
+    build: .
+    ports:
+      - "8080:80"
+    environment:
+      # API Configuration
+      - DEFAULT_API_URL=http://192.168.1.100:8000
+      
+      # App Configuration
+      - APP_TITLE=Vizio TV Controller
+      - APP_DESCRIPTION=Control your Vizio SmartCast TV from any device
+      - THEME_COLOR=#007AFF
+      
+      # Feature Flags
+      - DEBUG_MODE=false
+      - AUTO_CONNECT=true
+      - REFRESH_INTERVAL=5000
+      
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # Optional: Add the vizzy backend as well
+  # vizio-backend:
+  #   image: your-vizzy-backend-image
+  #   ports:
+  #     - "8000:8000"
+  #   environment:
+  #     - TV_IP=192.168.1.50
+  #     - TV_PORT=7345
+  #   restart: unless-stopped 
