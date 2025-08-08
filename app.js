@@ -16,9 +16,9 @@ class VizioTVController {
         
         // Auto-connect if enabled via environment variable
         const autoConnect = window.VIZIO_CONFIG?.AUTO_CONNECT !== 'false';
-        if (autoConnect) {
-            this.testConnection();
-        }
+//        if (autoConnect) {
+            //this.testConnection();
+  //      }
         
         this.setupServiceWorker();
     }
@@ -267,7 +267,7 @@ class VizioTVController {
             this.apiUrl = newUrl;
             localStorage.setItem('vizioApiUrl', newUrl);
             this.showToast('API URL saved', 'success');
-            this.testConnection();
+            //this.testConnection();
         } else {
             this.showToast('Please enter a valid URL', 'error');
         }
@@ -398,7 +398,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
 // Handle online/offline status
 window.addEventListener('online', () => {
     app.showToast('Back online', 'success');
-    app.testConnection();
+    //app.testConnection();
 });
 
 window.addEventListener('offline', () => {
